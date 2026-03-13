@@ -1,0 +1,75 @@
+{
+  "_comment": "复制此文件为 config.json 并填写你的企业微信信息",
+  
+  "wecom": {
+    "corpId": "你的企业 ID（在企业微信管理后台 - 企业信息中查看）",
+    "agentId": "应用 ID（自建应用的 AgentId）",
+    "secret": "应用 Secret（自建应用的 Secret）",
+    "token": "自定义 Token（用于回调验证，需与企业微信后台一致）",
+    "encodingAESKey": "自定义 AES Key（用于回调加密，需与企业微信后台一致）"
+  },
+  
+  "autoReplies": {
+    "default": {
+      "keywords": ["你好", "您好", "hello", "hi"],
+      "reply": "您好！欢迎咨询，请问有什么可以帮您？😊",
+      "priority": 1
+    },
+    "price": {
+      "keywords": ["价格", "多少钱", "费用", "报价"],
+      "reply": "您好！我们的产品价格根据具体需求定制。请提供您的具体需求，我们会为您详细报价。",
+      "priority": 2
+    },
+    "contact": {
+      "keywords": ["联系", "电话", "微信", "地址"],
+      "reply": "联系方式：\n📞 电话：400-XXX-XXXX\n📧 邮箱：contact@company.com\n📍 地址：北京市朝阳区 XXX 路 XXX 号",
+      "priority": 2
+    },
+    "workingHours": {
+      "keywords": ["时间", "营业", "上班", "下班"],
+      "reply": "工作时间：周一至周五 9:00-18:00（法定节假日除外）",
+      "priority": 2
+    }
+  },
+  
+  "humanHandoff": {
+    "keywords": ["人工", "客服", "转人工", "人工服务", "真人", "活人", "投诉", "举报"],
+    "timeoutSeconds": 300,
+    "enableSentimentAnalysis": true,
+    "negativeKeywords": ["垃圾", "骗子", "投诉", "举报", "太差", "失望", "愤怒", "生气"],
+    "notifyMethods": ["webhook", "message"],
+    "agents": [
+      {
+        "name": "客服小王",
+        "userId": "wangqiongzl",
+        "phone": "138****8888",
+        "available": true
+      }
+    ]
+  },
+  
+  "customScripts": {
+    "terminology": {
+      "SaaS": "软件即服务（Software as a Service）",
+      "API": "应用程序接口",
+      "DAU": "日活跃用户数",
+      "ROI": "投资回报率",
+      "KPI": "关键绩效指标"
+    },
+    "forbiddenWords": {
+      "最便宜": "性价比高",
+      "最好": "优质",
+      "第一": "领先",
+      "绝对": "非常",
+      "100%": "高成功率",
+      "保证": "致力于"
+    }
+  },
+  
+  "callback": {
+    "port": 8899,
+    "path": "/wecom/callback"
+  },
+  
+  "debug": false
+}
