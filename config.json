@@ -1,0 +1,89 @@
+{
+  "$schema": "https://example.com/wecom-helper-config-schema.json",
+  "$comment": "企业微信助手配置文件 - 修改后重启生效",
+  
+  "wecom": {
+    "corpId": "wwXXXXXXXXXXXXXX",
+    "agentId": "1000001",
+    "secret": "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+    "token": "your_token",
+    "encodingAESKey": "your_aes_key"
+  },
+  
+  "autoReplies": {
+    "default": {
+      "keywords": ["你好", "您好", "hello", "hi"],
+      "reply": "您好！欢迎咨询，请问有什么可以帮您？😊",
+      "priority": 1
+    },
+    "price": {
+      "keywords": ["价格", "多少钱", "费用", "报价"],
+      "reply": "您好！我们的产品价格根据具体需求定制。请提供您的具体需求，我们会为您详细报价。",
+      "priority": 2
+    },
+    "contact": {
+      "keywords": ["联系", "电话", "微信", "地址"],
+      "reply": "联系方式：\n📞 电话：400-XXX-XXXX\n📧 邮箱：contact@company.com\n📍 地址：北京市朝阳区 XXX 路 XXX 号",
+      "priority": 2
+    },
+    "workingHours": {
+      "keywords": ["时间", "营业", "上班", "下班"],
+      "reply": "工作时间：周一至周五 9:00-18:00（法定节假日除外）",
+      "priority": 2
+    }
+  },
+  
+  "humanHandoff": {
+    "keywords": ["人工", "客服", "转人工", "人工服务", "真人", "活人", "投诉", "举报"],
+    "timeoutSeconds": 300,
+    "enableSentimentAnalysis": true,
+    "negativeKeywords": ["垃圾", "骗子", "投诉", "举报", "太差", "失望", "愤怒", "生气"],
+    "notifyMethods": ["webhook", "message"],
+    "agents": [
+      {
+        "name": "客服小王",
+        "userId": "wangqiongzl",
+        "phone": "138****8888",
+        "available": true
+      },
+      {
+        "name": "客服小李",
+        "userId": "lixiaoming",
+        "phone": "139****9999",
+        "available": true
+      }
+    ]
+  },
+  
+  "customScripts": {
+    "terminology": {
+      "SaaS": "软件即服务（Software as a Service）",
+      "API": "应用程序接口",
+      "DAU": "日活跃用户数",
+      "ROI": "投资回报率",
+      "KPI": "关键绩效指标"
+    },
+    "forbiddenWords": {
+      "最便宜": "性价比高",
+      "最好": "优质",
+      "第一": "领先",
+      "绝对": "非常",
+      "100%": "很高",
+      "保证": "致力于"
+    },
+    "clientSpecific": {
+      "client_001": {
+        "name": "XX 公司",
+        "greeting": "尊敬的 XX 公司客户，您好！",
+        "forbiddenTopics": ["价格", "竞品"],
+        "escalationLevel": "high"
+      }
+    }
+  },
+  
+  "rateLimit": {
+    "messagesPerSecond": 5,
+    "messagesPerMinute": 100,
+    "messagesPerHour": 2000
+  }
+}

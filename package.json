@@ -1,0 +1,32 @@
+{
+  "name": "wecom-helper",
+  "version": "1.0.0",
+  "description": "企业微信智能客服助手 - 官方 API 支持，合规自动化",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "init": "node index.js --init",
+    "test": "node index.js --test"
+  },
+  "keywords": [
+    "wecom",
+    "企业微信",
+    "客服",
+    "automation",
+    "auto-reply",
+    "chatbot",
+    "customer-service"
+  ],
+  "author": "光锥科技实验室",
+  "license": "MIT",
+  "bin": {
+    "wecom-helper": "./index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wangqiongzl/wecom-helper"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
