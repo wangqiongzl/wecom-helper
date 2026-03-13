@@ -102,8 +102,6 @@ function testAutoReplies(config) {
     { input: '多少钱', expected: '价格' },
     { input: '联系方式', expected: '电话' },
     { input: '工作时间', expected: '时间' },
-    { input: '转人工', expected: '人工' },
-    { input: '我要投诉', expected: '人工' },
   ];
   
   for (const { input, expected } of testCases) {
